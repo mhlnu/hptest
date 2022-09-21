@@ -163,13 +163,15 @@ p {
     }
     .leftMenuToggle {
         background-image: url('./assets/burger.svg');
-        background-size: 100%;
+        background-size: 75%;
+        margin-left: 0;
+        padding-left: 0;
         &:focus {
             box-shadow: none;
         }
         &.closeMenu {
             background-image: url('./assets/close.svg');
-            background-size: 70%;
+            background-size: 55%;
         }
     }
     .navbar-toggler-icon {
