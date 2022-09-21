@@ -1,0 +1,526 @@
+@font-face {
+    font-family: 'Cera Pro';
+    src: url('./fonts/CeraPro-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Cera Pro';
+    src: url('./fonts/CeraPro-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Cera Pro';
+    src: url('./fonts/CeraPro-MediumItalic.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Cera Pro';
+    src: url('./fonts/CeraPro-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+html {
+    font-size: 18px;
+    height: 100%;
+}
+
+.App {
+    padding: 0;
+    position: relative;
+}
+
+body {
+    height: 100%;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: "Cera Pro", sans-serif;
+    color: #686D71;
+    line-height: 1.2;
+    overflow-x: hidden;
+    background: #FBFBFB;
+    padding-top: 104px;
+}
+
+a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #199BB5;
+}
+
+a:hover {
+    color: #47AFC4;
+}
+
+h1 {
+    font-size: 2.2rem;
+    font-weight: 500;
+}
+
+p {
+    font-size: 1rem;
+}
+
+.topmenu {
+    // I'm nesting them like this because I don't know the scope of the app
+    // or how Bootstrap is used all across the rest of it
+    // So I only want to apply this styles in this particular place.
+    display: block;
+    position: fixed;
+    z-index: 999;
+    height: 104px;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #35353D;
+    .container {
+        height: 100%;
+    }
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+        height: 100%;
+        align-content: center;
+    }
+    .nav {
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        font-size: 16px;
+        align-items: center;
+        --bs-nav-link-hover-color: #199BB5 !important;
+        --bs-nav-link-color: #199BB5;
+        --bs-primary: #199BB5;
+    }
+    .menu {
+        padding-right: 1rem;
+        margin-right: 1rem;
+        border-right: 1px solid #686D71;
+    }
+    .nav-link {
+        padding: 0;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: bold;
+        opacity: .9;
+        cursor: pointer;
+        span {
+            border-radius: 4px;
+            color: #fff;
+            display: inline-block;
+            margin-left: 1rem;
+            padding: .3rem .5rem .2rem;
+            background-color: #199BB5;
+        }
+        &.mail {
+            span {
+                position: relative;
+                top: -.5rem;
+                right: -.5rem;
+                background-color: #F9615A;
+                border-radius: 50%;
+            }
+        }
+    }
+    .ico {
+        margin-left: 1rem;
+        min-width: 2rem;
+        height: 2rem;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    .mail {
+        background-image: url('./assets/mail.svg');
+        background-position: center 80%;
+    }
+    .user {
+        width: 4rem;
+        background-image: url('./assets/user.svg');
+        background-position: left center;
+        span {
+            width: 2rem;
+            height: 2rem;
+            position: relative;
+            right: 0;
+            background-repeat: no-repeat;
+            background-color: transparent;
+            background-position: right center;
+            background-image: url('./assets/down.svg');
+        }
+    }
+    .basket {
+        background-image: url('./assets/basket.svg');
+    }
+    .leftMenuToggle {
+        background-image: url('./assets/burger.svg');
+        background-size: 100%;
+        &:focus {
+            box-shadow: none;
+        }
+        &.closeMenu {
+            background-image: url('./assets/close.svg');
+            background-size: 70%;
+        }
+    }
+    .navbar-toggler-icon {
+        background: none;
+    }
+}
+
+.btn {
+    border-radius: 50px;
+    padding: .7rem 1.4rem !important;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.btn.btn-primary {
+    background-color: #199BB5;
+    border-color: #108CA5;
+    color: #fff;
+    &:hover {
+        background-color: #47AFC4;
+    }
+    &:focus {
+        background-color: #108CA5;
+        border-color: #108CA5;
+        outline: none !important;
+        box-shadow: none;
+    }
+    &:disabled {
+        background-color: #199BB5;
+    }
+    --bs-btn-bg: #199BB5;
+    --bs-btn-border-color: #199BB5;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #199BB5;
+    --bs-btn-hover-border-color: #199BB5;
+    --bs-btn-focus-shadow-rgb: 49,
+    132,
+    253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #199BB5;
+    --bs-btn-active-border-color: #199BB5;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #199BB5;
+    --bs-btn-disabled-border-color: #199BB5;
+}
+
+.btn-outline-primary {
+    border-color: #fff !important;
+    border-width: 3px;
+    background-color: transparent;
+    color: #fff !important;
+    &:hover {
+        background-color: transparent;
+        opacity: .8;
+    }
+    &:focus {
+        background-color: transparent;
+        outline: none !important;
+        box-shadow: none;
+    }
+    &:disabled {
+        opacity: .5 !important;
+    }
+}
+
+button:disabled,
+button[disabled] {
+    color: #fff !important;
+    opacity: .3 !important;
+}
+
+.leftMenu {
+    padding: 2rem 0;
+    margin-left: -1rem;
+    flex-direction: row;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    align-content: baseline;
+    li {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #50555B;
+        &.active,
+        &.active a {
+            color: #199BB5;
+        }
+        a, a.active {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: #50555B;
+        }
+        a:hover {
+            color: #47AFC4;
+        }
+        &:hover {
+            color: #47AFC4;
+            cursor: pointer;
+        }
+    }
+    span {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &:before {
+        background: #fff;
+        z-index: -1;
+        content: "";
+        position: absolute;
+        width: 1000%;
+        height: 100%;
+        top: 0;
+        right: 0;
+    }
+}
+
+.fromHeader {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    margin: 0 auto;
+    .leftMenu {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+.content {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: .5rem;
+    align-items: center;
+    & > :nth-child(2) {
+        text-align: right;
+    }
+}
+
+.addNew {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-left: 1.5rem;
+    background: center left no-repeat url('./assets/plus2.svg')
+}
+
+.loading {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.tabNav {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #DADBDD;
+    .tabItem {
+        padding-bottom: .5rem;
+        padding-top: .5rem;
+        margin-right: 2rem;
+        background-position: left 10%;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        text-align: left;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #50555B;
+        font-size: .8rem;
+        font-weight: 700;
+        span {
+            height: 1.3rem;
+            margin-right: .7rem;
+        }
+    }
+    .active {
+        color: #199BB5;
+        border-bottom: 2px solid #199BB5;
+        padding-bottom: calc(.5rem - 2px);
+        img {
+            filter: invert(50%) sepia(45%) saturate(6137%) hue-rotate(161deg) brightness(98%) contrast(80%);
+        }
+    }
+}
+
+.results {
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+.foodCard {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0px 0px 1px rgba(32, 37, 43, 0.1),
+    0px 4px 8px rgba(51, 91, 130, 0.12);
+    border: 0 none;
+    border-radius: 4px;
+    flex: 1;
+    height: calc(100% - 1.5rem);
+    &:hover {
+        box-shadow: 0px 0px 1px rgba(32, 37, 43, 0.1),
+        0px 18px 18px rgba(32, 37, 43, 0.12);
+        cursor: pointer;
+    }
+    .card-subtitle {
+        font-weight: 400;
+        font-size: .65rem;
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: .3rem;
+        margin-bottom: .5rem;
+        color: #8B8E92;
+    }
+    .card-title {
+        font-size: 1.35rem;
+        text-align: center;
+        color: #50555B;
+        margin-bottom: 1rem;
+    }
+    .card-text {
+        font-size: .8rem;
+        text-align: center;
+        color: #686D71;
+        font-weight: 400;
+    }
+    .btn {
+        margin: auto auto 0;
+        background-color: #fff;
+        border: 4px solid #199BB5;
+        color: #199BB5;
+        &:hover {
+            background-color: #fff;
+            border-color: #47AFC4;
+        }
+        &:focus {
+            background-color: #fff;
+            border-color: #108CA5;
+        }
+    }
+}
+
+.filterOptions {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    .filtersCol {
+        display: flex;
+    }
+    .searchBar {
+        border: 1px solid hsla(218, 6%, 72%, .2);
+        border-radius: 45px;
+        box-shadow: 0px 0px 1px rgba(10, 31, 68, 0.1),
+        0px 1px 1px rgba(51, 91, 130, 0.12);
+        height: 50px;
+        outline: none;
+        padding-left: 45px !important;
+        width: 100%;
+        font-size: .9rem;
+        background: #fff .5rem center no-repeat url('./assets/search.svg');
+        &::placeholder {
+            color: #B4B7BC;
+        }
+    }
+    .search-icon {
+        width: 3rem;
+    }
+}
+
+.filterDropdown {
+    margin-right: 1.5rem;
+    color: #50555B;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    a {
+        color: #50555B;
+    }
+    .dropdown-menu {
+        text-transform: none;
+        font-size: .8rem;
+        font-weight: normal;
+    }
+    .selectedVal {
+        margin-left: .3rem;
+        color: #108CA5;
+    }
+    .filterToggle {
+        padding-right: 1.5rem;
+        background: right center no-repeat;
+        background-image: url('./assets/chevrondown.svg');
+    }
+    .active {
+        background: none;
+        font-weight: bold;
+        color: #108CA5;
+    }
+}
+
+@media (max-width: 768px) {
+    .filterOptions {
+        flex-direction: column;
+    }
+    .filtersCol {
+        margin-bottom: 1.5rem;
+    }
+    .logoCol {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        .logo img {
+            width: 2.5rem;
+        }
+    }
+    .tabItem {
+        min-width: 8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .tabNav {
+        overflow-y: scroll;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    .content > :nth-child(2) {
+        text-align: left;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .foodCard {
+        aspect-ratio: 1/1;
+    }
+}
